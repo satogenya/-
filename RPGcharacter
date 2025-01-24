@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main()
+{
+   int intelligence, stamina, charisma;
+   int total = 20;
+   
+   srand(time(NULL));
+   
+   intelligence = rand() % (total - 2) + 1;
+   stamina = rand() % (total - intelligence - 1) + 1;
+   charisma = total - intelligence - stamina;
+   
+   printf("Stats:\n");
+   printf("Intelligence: %d\n", intelligence);
+   printf("Stamina: %d\n", stamina);
+   printf("Charisma: %d\n", charisma);
+   
+   if (intelligence >= stamina && intelligence >= charisma)
+   {
+       printf("Class: Mage\n");
+   }
+   else if (stamina >= intelligence && stamina >= charisma)
+   {
+       printf("Class: Knight\n");
+   }
+   else
+   {
+       printf("Class: Thief\n");
+   }
+   
+   return 0;
+}
